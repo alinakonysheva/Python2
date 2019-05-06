@@ -1,0 +1,11 @@
+{
+    "orders": [
+        {
+            "item": "dress",
+            "quantity": "1",
+            "price": "100",
+            "buyer": "Smith",
+            "date": "01.05.2019"
+        }
+    ]
+}

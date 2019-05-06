@@ -1,0 +1,11 @@
+items:
+- dress
+- shoes
+- skirt
+- jeans
+price:
+  dress: 100€
+  jeans: 25€
+  shoes: 50€
+  skirt: 40€
+quantity: 4
