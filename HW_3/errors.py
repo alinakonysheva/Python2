@@ -1,10 +1,10 @@
-
 # Создаем исключения
 
 # исключение. отсутствует обязательный атрибут response
 class MandatoryKeyError(Exception):
     def __init__(self, key):
         self.key = key
+
 
 # исключение. переданный код отсутствует среди стандартных кодов
 class ResponseCodeError(Exception):
@@ -13,6 +13,8 @@ class ResponseCodeError(Exception):
 
     def __str__(self):
         return 'Неверный код ответа {}'.format(self.code)
+
+
 # исключение. длина кода - не три символа
 class ResponseCodeLenError(ResponseCodeError):
     def __str__(self):
@@ -20,6 +22,8 @@ class ResponseCodeLenError(ResponseCodeError):
 
     def __str__(self):
         return 'Не хватает обязательного атрибута {}'.format(self.key)
+
+
 # исключение. когда имя пользователя слишком длинное - более 25 символов
 class UsernameToLongError(Exception):
     def __init__(self, username):

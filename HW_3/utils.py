@@ -1,9 +1,5 @@
 import json
 
-# Кодировка
-ENCODING = 'utf-8'
-
-
 def dict_to_bytes(message_dict):
     # Проверям, что пришел словарь
     if isinstance(message_dict, dict):

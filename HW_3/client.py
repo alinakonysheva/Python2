@@ -13,6 +13,7 @@ from HW_3.errors import UsernameToLongError, ResponseCodeLenError, MandatoryKeyE
 from HW_3.config import *
 from HW_3.utils import send_message, get_message
 
+
 # функция формирования сообщения
 def create_presence(account_name='Guest'):
     # учтем ограничение на имя пользователя / название чата (name): 25 символов
@@ -20,7 +21,7 @@ def create_presence(account_name='Guest'):
         # выводим ошибку в случае если имя пользователя слишком длинное
         raise UsernameToLongError(account_name)
 
-     # Если account_name не строковая
+    # Если account_name не строковая
     if not isinstance(account_name, str):
         # Генерируем ошибку
         raise TypeError
@@ -32,6 +33,7 @@ def create_presence(account_name='Guest'):
         }
     }
     return message
+
 
 # Разбраем ответа сервера
 def translate_message(response):

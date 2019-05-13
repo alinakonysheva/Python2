@@ -9,19 +9,20 @@ from HW_3.config import *
 from HW_3.utils import get_message, send_message
 from socket import socket, AF_INET, SOCK_STREAM
 
+
 # Формируем ответ:
 def presence_answer(presence_message):
-
     # Делаем проверки
     if ACTION in presence_message and \
-                    presence_message[ACTION] == PRESENCE and \
-                    TIME in presence_message and \
+            presence_message[ACTION] == PRESENCE and \
+            TIME in presence_message and \
             isinstance(presence_message[TIME], float):
         # Если всё хорошо шлем ОК
         return {RESPONSE: 200}
     else:
         # Шлем код ошибки
         return {RESPONSE: 400, ERROR: 'Не верный запрос'}
+
 
 if __name__ == '__main__':
     # Создается TCP-сокет сервера
