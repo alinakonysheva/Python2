@@ -5,11 +5,6 @@ ENCODING = 'utf-8'
 
 
 def dict_to_bytes(message_dict):
-    """
-    Преобразование словаря в байты
-    :param message_dict: словарь
-    :return: bytes
-    """
     # Проверям, что пришел словарь
     if isinstance(message_dict, dict):
         # Преобразуем словарь в json
@@ -23,11 +18,7 @@ def dict_to_bytes(message_dict):
 
 
 def bytes_to_dict(message_bytes):
-    """
-    Получение словаря из байтов
-    :param message_bytes: сообщение в виде байтов
-    :return: словарь сообщения
-    """
+
     # Если переданы байты
     if isinstance(message_bytes, bytes):
         # Декодируем
@@ -47,12 +38,6 @@ def bytes_to_dict(message_bytes):
 
 
 def send_message(sock, message):
-    """
-    Отправка сообщения
-    :param sock: сокет
-    :param message: словарь сообщения
-    :return: None
-    """
     # Словарь переводим в байты
     bprescence = dict_to_bytes(message)
     # Отправляем
@@ -60,11 +45,6 @@ def send_message(sock, message):
 
 
 def get_message(sock):
-    """
-    Получение сообщения
-    :param sock:
-    :return: словарь ответа
-    """
     # Получаем байты
     bresponse = sock.recv(1024)
     # переводим байты в словарь
